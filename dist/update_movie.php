@@ -115,42 +115,61 @@ $result = mysqli_query($link, $query);
 					<div class="card">
 						<div class="card-body">
 
-							<h3 align="center">Search Customer</h3>
+							<h3 align="center">Update Movie</h3>
 
 							<div class="table-responsive  container-fluid ">
 								<hr />
 
-								<table id="employee_data" class="table table-striped table-bordered">
-									<thead>
-										<tr>
-											<td>Id</td>
-											<td>Title</td>
-											<td>Genre</td>
-											<td>Director</td>
-											<td>Language</td>
-										</tr>
-									</thead>
-									<?php
+								<form class="row g-3 " action="updateMovies.php" method="post" enctype="multipart/form-data">
 
-									$sql = "SELECT * FROM Movies";
 
-									$getQuery = mysqli_query($link, $sql);
+									<div class="col-md-12 border-left">
+										<div class="row">
 
-									while ($row = mysqli_fetch_array($getQuery)) {
+											<div class="col-md-6 col-sm-12">
+												<label for="title" class="form-label">Id</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="id" name="id" aria-describedby="inputGroupPrepend" placeholder="Movie Id">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<label for="title" class="form-label">Title</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="title" name="title" aria-describedby="inputGroupPrepend" placeholder="Movie title">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<label for="title" class="form-label">Genre</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="genre" name="genre" aria-describedby="inputGroupPrepend" placeholder="Movie genre">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<label for="title" class="form-label">Director</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="director" name="director" aria-describedby="inputGroupPrepend" placeholder="Movie director">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<label for="title" class="form-label">Language</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="language" name="language" aria-describedby="inputGroupPrepend" placeholder="Movie language">
+												</div>
+											</div>
 
-										echo '  
-										   <tr>  
-											<td>' . $row["id"] . '</td>  
-											<td>' . $row["title"] . '</td>  
-											<td>' . $row["genre"] . '</td>  
-											<td>' . $row["director"] . '</td>  
-											<td>' . $row["language"] . '</td>  
-										   </tr>  
-										   ';
-									}
-									mysqli_close($link);
-									?>
-								</table>
+										</div>
+
+										<div class="row">
+											<button type="submit" class="btn btn-outline-primary mt-3">
+												Submit&nbsp;&nbsp;
+												<i class=" fa fa-paper-plane" aria-hidden="true"></i>
+											</button>
+
+										</div>
+
+									</div>
+								</form>
+
 							</div>
 						</div>
 
