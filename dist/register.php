@@ -119,7 +119,7 @@
 
 								<div class="col-md-3 text-center">
 									<div class="profile-img">
-										<img src="assets/images/user/movie.png" class="picture-src" id="uploadPreview" width="200px">
+										<img src="assets/images/user/profile.jpg" class="picture-src" id="uploadPreview" width="200px">
 
 										<div class="file btn btn-lg btn-primary" style="width: 80%;">
 											Change Photo
@@ -175,7 +175,7 @@
 											<div class="error" id="cityTownErr"></div>
 										</div>
 
-										<div class="col-md-4 col-sm-12">
+										<div class="col-md-6 col-sm-12">
 											<label for="state" class="form-label">State</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="fa fa-flag"></i></span>
@@ -238,7 +238,7 @@
 											<div class="error" id="stateErr"></div>
 										</div>
 
-										<div class="col-md-4 col-sm-12">
+										<div class="col-md-6 col-sm-12">
 											<label for="zip" class="form-label">Zip</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="far fa-building"></i></span>
@@ -248,79 +248,81 @@
 											<div class="error" id="zipErr"></div>
 										</div>
 
+
+										<div class="col-md-6 col-sm-12">
+											<label for="phoneNumber" class="form-label">Phone Number</label>
+											<div class="input-group">
+												<span class="input-group-text"><i class="fa fa-phone-square"></i></span>
+												<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="inputGroupPrepend" placeholder="Phone Number" onkeyup="validatePhoneNumber()">
+												<span class="input-group-text iconParent"><i class="fa fa-star" id="phoneNumberIcon"></i></span>
+											</div>
+											<div class="error" id="phoneNumberErr"></div>
+										</div>
+
+										<div class="col-md-6 col-sm-12">
+											<label for="emailAddress" class="form-label">Email Address</label>
+											<div class="input-group">
+												<span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+												<input type="text" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="inputGroupPrepend" placeholder="Email Address" onkeyup="validateEmailAddress()">
+												<span class="input-group-text iconParent"><i class="fa fa-star" id="emailAddressIcon"></i></span>
+											</div>
+											<div class="error" id="emailAddressErr"></div>
+										</div>
+
+
+										<div class="col-md-6 col-sm-12">
+											<label for="password" class="form-label">Password</label>
+											<div class="input-group">
+
+												<div class="input-group bg-light" id="show_hide_password">
+													<span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
+													<input type="password" class="form-control" id="password" name="password" aria-describedby="inputGroupPrepend" placeholder="Password" onkeyup="validatePassword();">
+													<div class="input-group-text iconParent">
+														<div class="fa fa-star" id="passwordIcon">
+														</div>
+													</div>
+													<span class="input-group-text">
+														<a href=""><i class="fa fa-lg fa-eye" style="padding-left: 10px; padding-right: 10px;" aria-hidden="true"></i></a>
+													</span>
+												</div>
+											</div>
+											<small>At least eight characters in length, with at least one numeric digit and a special character.</small>
+											<div class="error" id="passwordErr"></div>
+										</div>
+
+
+										<div class="col-md-6 col-sm-12">
+											<label for="confirmPassword" class="form-label">Confirm Password</label>
+											<div class="input-group">
+
+												<div class="input-group bg-light" id="show_hide_confirm_password">
+													<span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
+													<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" aria-describedby="inputGroupPrepend" placeholder="Confirm Password" onkeyup="validateConfirmPassword()">
+
+													<span class="input-group-text iconParent">
+														<div class="fa fa-star" id="confirmPasswordIcon"></div>
+													</span>
+													<span class="input-group-text">
+														<a href=""><i class="fa fa-lg fa-eye" style=" padding-left: 10px; padding-right: 10px;" aria-hidden="true"></i></a>
+													</span>
+												</div>
+											</div>
+											<div class="error" id="confirmPasswordErr"></div>
+										</div>
+
+
+
+										<div class="row mt-1">
+											<label>Certify that you are over 18 years</label>
+											<div class="form-inline">
+												<label><input type="checkbox" value="false" id="over18" name="over18"> I certify that I am 18 years of age or older.</label>
+												<div class="error" id="over18Err"></div>
+											</div>
+										</div>
+
 									</div>
 								</div>
 								<hr>
-								<div class="col-md-6 mt-0">
-									<label for="phoneNumber" class="form-label">Phone Number</label>
-									<div class="input-group">
-										<span class="input-group-text"><i class="fa fa-phone-square"></i></span>
-										<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="inputGroupPrepend" placeholder="Phone Number" onkeyup="validatePhoneNumber()">
-										<span class="input-group-text iconParent"><i class="fa fa-star" id="phoneNumberIcon"></i></span>
-									</div>
-									<div class="error" id="phoneNumberErr"></div>
-								</div>
-
-								<div class="col-md-6 mt-0">
-									<label for="emailAddress" class="form-label">Email Address</label>
-									<div class="input-group">
-										<span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-										<input type="text" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="inputGroupPrepend" placeholder="Email Address" onkeyup="validateEmailAddress()">
-										<span class="input-group-text iconParent"><i class="fa fa-star" id="emailAddressIcon"></i></span>
-									</div>
-									<div class="error" id="emailAddressErr"></div>
-								</div>
-
-
-								<div class="col-md-4 mt-2">
-									<label for="password" class="form-label">Password</label>
-									<div class="input-group">
-
-										<div class="input-group bg-light" id="show_hide_password">
-											<span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
-											<input type="password" class="form-control" id="password" name="password" aria-describedby="inputGroupPrepend" placeholder="Password" onkeyup="validatePassword();">
-											<div class="input-group-text iconParent">
-												<div class="fa fa-star" id="passwordIcon">
-												</div>
-											</div>
-											<span class="input-group-text">
-												<a href=""><i class="fa fa-lg fa-eye" style="padding-left: 10px; padding-right: 10px;" aria-hidden="true"></i></a>
-											</span>
-										</div>
-									</div>
-									<small>At least eight characters in length, with at least one numeric digit and a special character.</small>
-									<div class="error" id="passwordErr"></div>
-								</div>
-
-
-								<div class="col-md-4 mt-2">
-									<label for="confirmPassword" class="form-label">Confirm Password</label>
-									<div class="input-group">
-
-										<div class="input-group bg-light" id="show_hide_confirm_password">
-											<span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
-											<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" aria-describedby="inputGroupPrepend" placeholder="Confirm Password" onkeyup="validateConfirmPassword()">
-
-											<span class="input-group-text iconParent">
-												<div class="fa fa-star" id="confirmPasswordIcon"></div>
-											</span>
-											<span class="input-group-text">
-												<a href=""><i class="fa fa-lg fa-eye" style=" padding-left: 10px; padding-right: 10px;" aria-hidden="true"></i></a>
-											</span>
-										</div>
-									</div>
-									<div class="error" id="confirmPasswordErr"></div>
-								</div>
-
-
-
-								<div class="row mt-1">
-									<label>Certify that you are over 18 years</label>
-									<div class="form-inline">
-										<label><input type="checkbox" value="false" id="over18" name="over18"> I certify that I am 18 years of age or older.</label>
-										<div class="error" id="over18Err"></div>
-									</div>
-								</div>
 
 								<div class="row">
 									<button type="submit" class="btn btn-outline-primary mt-3" onclick="validateForm();">
@@ -428,7 +430,7 @@
 	// Validate first name
 	function validateFirstName() {
 
-		if (firstName.value == "") {
+		if (firstName.value === "") {
 			printError("firstNameErr", "Please enter your first name");
 			inValid(firstName, "firstNameIcon");
 
@@ -448,7 +450,7 @@
 
 	// Validate last name
 	function validateLastName() {
-		if (lastName.value == "") {
+		if (lastName.value === "") {
 			printError("lastNameErr", "Please enter your last name");
 			inValid(lastName, "lastNameIcon");
 		} else {
@@ -468,7 +470,7 @@
 
 	// Validate address 1
 	function validateAddress() {
-		if (address.value == "") {
+		if (address.value === "") {
 			addressErr = true;
 			inValid(address, "addressIcon");
 			printError("addressErr", "Please enter address");
@@ -492,7 +494,7 @@
 
 	function validateCity() {
 		// Validate city/town
-		if (cityTown.value == "") {
+		if (cityTown.value === "") {
 			printError("cityTownErr", "Please enter your city/town");
 			inValid(cityTown, "cityIcon");
 		} else {
@@ -514,7 +516,7 @@
 	// Validate state
 	function validateState() {
 		// Validate state
-		if (state.value == "") {
+		if (state.value === "") {
 			printError("stateErr", "Please select your state");
 			inValid(state, "stateIcon");
 		} else {
@@ -526,7 +528,7 @@
 
 	// Validate zip
 	function validateZip() {
-		if (zip.value == "") {
+		if (zip.value === "") {
 			printError("zipErr", "Please enter your zip");
 			inValid(zip, "zipIcon");
 		} else {
@@ -544,7 +546,7 @@
 
 	// Validate phone number
 	function validatePhoneNumber() {
-		if (phoneNumber.value == "") {
+		if (phoneNumber.value === "") {
 			printError("phoneNumberErr", "Please enter your phone number");
 			inValid(phoneNumber, "phoneNumberIcon");
 		} else {
@@ -562,7 +564,7 @@
 
 	// Validate email address
 	function validateEmailAddress() {
-		if (emailAddress.value == "") {
+		if (emailAddress.value === "") {
 			printError("emailAddressErr", "Please enter your email address");
 			inValid(emailAddress, "emailAddressIcon");
 		} else {
@@ -582,7 +584,7 @@
 
 	// Validate password
 	function validatePassword() {
-		if (password.value == "") {
+		if (password.value === "") {
 			printError("passwordErr", "Please enter your password");
 			inValid(password, "passwordIcon");
 		} else {
@@ -617,7 +619,7 @@
 
 	function validateConfirmPassword() {
 		// Confirm password
-		if (confirmPassword.value == "") {
+		if (confirmPassword.value === "") {
 			printError("confirmPasswordErr", "Please confirm your password");
 			inValid(confirmPassword, "confirmPasswordIcon");
 		} else {
@@ -679,6 +681,7 @@
 			document.getElementById("pictureName").value = document.getElementById("fileToUpload").files[0].name;
 			document.getElementById("pictureParagraph").innerHTML = document.getElementById("fileToUpload").files[0].name;
 		};
+
 	};
 </script>
 

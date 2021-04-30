@@ -1,176 +1,175 @@
-<?php  
+<?php
 // Include config file
 require_once "admin/config.php";
 
- $query ="SELECT * FROM customers ORDER BY ID DESC";  
- $result = mysqli_query($link, $query);  
- ?> 
+$query = "SELECT * FROM customers ORDER BY ID DESC";
+$result = mysqli_query($link, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 11]>
+	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 11]>
     	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     	<![endif]-->
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is made using Bootstrap 5 design framework. Download the free admin template & use it for your project.">
-    <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template">
-    <meta name="author" content="DashboardKit ">
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="DashboardKit is made using Bootstrap 5 design framework. Download the free admin template & use it for your project.">
+	<meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template">
+	<meta name="author" content="DashboardKit ">
 
 
-    <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+	<!-- Favicon icon -->
+	<link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
 
-    <!-- font css -->
-    <link rel="stylesheet" href="assets/fonts/feather.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-    <link rel="stylesheet" href="assets/fonts/material.css">
+	<!-- font css -->
+	<link rel="stylesheet" href="assets/fonts/feather.css">
+	<link rel="stylesheet" href="assets/fonts/fontawesome.css">
+	<link rel="stylesheet" href="assets/fonts/material.css">
 
-    <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+	<!-- vendor css -->
+	<link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
 
-  
 
-  <title>All Customers</title>  
+
+	<title>All Customers</title>
 
 </head>
 
 <body class="">
-    <!-- [ Pre-loader ] start -->
-    <div class="loader-bg">
-        <div class="loader-track">
-            <div class="loader-fill"></div>
-        </div>
-    </div>
-    <!-- [ Pre-loader ] End -->
-    <!-- [ Mobile header ] start -->
-    <div class="pc-mob-header pc-header">
-        <div class="pcm-logo">
-            <img src="assets/images/logo.svg" alt="" class="logo logo-lg">
-        </div>
-        <div class="pcm-toolbar">
-            <a href="#!" class="pc-head-link" id="mobile-collapse">
-                <div class="hamburger hamburger--arrowturn">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="#!" class="pc-head-link" id="headerdrp-collapse">
-                <i data-feather="align-right"></i>
-            </a>
-            <a href="#!" class="pc-head-link" id="header-collapse">
-                <i data-feather="more-vertical"></i>
-            </a>
-        </div>
-    </div>
-    <!-- [ Mobile header ] End -->
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ Mobile header ] start -->
+	<div class="pc-mob-header pc-header">
+		<div class="pcm-logo">
+			<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+		</div>
+		<div class="pcm-toolbar">
+			<a href="#!" class="pc-head-link" id="mobile-collapse">
+				<div class="hamburger hamburger--arrowturn">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<a href="#!" class="pc-head-link" id="headerdrp-collapse">
+				<i data-feather="align-right"></i>
+			</a>
+			<a href="#!" class="pc-head-link" id="header-collapse">
+				<i data-feather="more-vertical"></i>
+			</a>
+		</div>
+	</div>
+	<!-- [ Mobile header ] End -->
 
-    <!--include navigation menu start-->
-    <?php require("left_nav.php"); ?>
-    <!--include navigation menu end-->
+	<!--include navigation menu start-->
+	<?php require("left_nav.php"); ?>
+	<!--include navigation menu end-->
 
 
-   <!-- [ Header ] start -->
-   <header class="pc-header ">
-        <!--include header start-->
-        <header class="pc-header ">
-            <?php require("header.php"); ?>
-        </header>
-        <!--include header end-->
-    </header>
-    <!-- [ Header ] end -->
+	<!-- [ Header ] start -->
+	<header class="pc-header ">
+		<!--include header start-->
+		<header class="pc-header ">
+			<?php require("header.php"); ?>
+		</header>
+		<!--include header end-->
+	</header>
+	<!-- [ Header ] end -->
 
-    <!-- [ Main Content ] start -->
-    <div class="pc-container">
-        <div class="pcoded-content">
-            <!-- [ breadcrumb ] start -->
-            <div class="page-header">
-                <div class="page-block">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="page-header-title">
-                                <h5 class="m-b-10">All Customers</h5>
-                            </div>
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item">All Customers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- [ breadcrumb ] end -->
-            <!-- [ Main Content ] start -->
-            <div class="row">
-                <!-- [ sample-page ] start -->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
+	<!-- [ Main Content ] start -->
+	<div class="pc-container">
+		<div class="pcoded-content">
+			<!-- [ breadcrumb ] start -->
+			<div class="page-header">
+				<div class="page-block">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<div class="page-header-title">
+								<h5 class="m-b-10">All Customers</h5>
+							</div>
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.php">Home</a></li>
+								<li class="breadcrumb-item">Search Customers</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [ breadcrumb ] end -->
+			<!-- [ Main Content ] start -->
+			<div class="row">
+				<!-- [ sample-page ] start -->
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-body">
 
- 
-                <h3 align="center">All Customers</h3>  
- 
-                <div class="table-responsive  container-fluid ">  
-                     <table id="employee_data" class="table table-striped table-bordered">  
-                          <thead>  
-                               <tr>  
-                                    <td>First Name</td>  
-                                    <td>Last Name</td>  
-                                    <td>Gender</td>  
-                                    <td>City</td>  
-                                    <td>Email</td>  
-                               </tr>  
-                          </thead>  
-                          <?php  
-                          while($row = mysqli_fetch_array($result))  
-                          {  
-                               echo '  
-                               <tr>  
-                                    <td>'.$row["first_name"].'</td>  
-                                    <td>'.$row["last_name"].'</td>  
-                                    <td>'.$row["gender"].'</td>  
-                                    <td>'.$row["city_town"].'</td>  
-                                    <td>'.$row["email_address"].'</td>  
-                               </tr>  
-                               ';  
-                          }
-                          
-                               // Close connection
-                              mysqli_close($link);
-                          ?>  
-                     </table>  
-                
-           </div>  
-                              
+							<h3 align="center">Search Customer</h3>
 
-                        </div>
+							<div class="table-responsive  container-fluid ">
+								<hr />
 
-                    </div>
-                        <!-- [ Footer ] start -->
-                        <div class="container-fluid rounded bg-blue-100 mt-1">
-                            <!--include footer start-->
-							    <?php require("footer.php"); ?>
-                            <!--include footer end-->
-                        </div>
-                        <!-- [ Footer ] end -->
-                </div>
-                <!-- [ sample-page ] end -->
-            </div>
-            <!-- [ Main Content ] end -->
-        </div>
-    </div>
-    <!-- [ Main Content ] end -->
-    <!-- Warning Section start -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 11]>
+								<table id="employee_data" class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<td>First Name</td>
+											<td>Last Name</td>
+											<td>City</td>
+											<td>Email</td>
+										</tr>
+									</thead>
+									<?php
+
+									$sql = "SELECT * FROM Customers";
+
+									$getQuery = mysqli_query($link, $sql);
+
+									while ($row = mysqli_fetch_array($getQuery)) {
+
+										echo '  
+										   <tr>  
+											<td>' . $row["firstName"] . '</td>  
+											<td>' . $row["lastName"] . '</td>  
+											<td>' . $row["city"] . '</td>  
+											<td>' . $row["emailAddress"] . '</td>  
+										   </tr>  
+										   ';
+									}
+									mysqli_close($link);
+									?>
+								</table>
+							</div>
+						</div>
+
+					</div>
+					<!-- [ Footer ] start -->
+					<div class="container-fluid rounded bg-blue-100 mt-1">
+						<!--include footer start-->
+						<?php require("footer.php"); ?>
+						<!--include footer end-->
+					</div>
+					<!-- [ Footer ] end -->
+				</div>
+				<!-- [ sample-page ] end -->
+			</div>
+			<!-- [ Main Content ] end -->
+		</div>
+	</div>
+	<!-- [ Main Content ] end -->
+	<!-- Warning Section start -->
+	<!-- Older IE warning message -->
+	<!--[if lt IE 11]>
         <div class="ie-warning">
             <h1>Warning!!</h1>
             <p>You are using an outdated version of Internet Explorer, please upgrade
@@ -213,31 +212,31 @@ require_once "admin/config.php";
             <p>Sorry for the inconvenience!</p>
         </div>
     <![endif]-->
-    <!-- Warning Section Ends -->
-    <!-- Required Js -->
-    <script src="assets/js/vendor-all.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/feather.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
-    <!-- <script src="assets/js/uikit.min.js"></script> -->
+	<!-- Warning Section Ends -->
+	<!-- Required Js -->
+	<script src="assets/js/vendor-all.min.js"></script>
+	<script src="assets/js/plugins/bootstrap.min.js"></script>
+	<script src="assets/js/plugins/feather.min.js"></script>
+	<script src="assets/js/pcoded.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
+	<!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
+	<!-- <script src="assets/js/uikit.min.js"></script> -->
 
 
 
 
 
-             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-             <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
-             <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>              
-             <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 
 
- <script>  
- $(document).ready(function(){  
-      $('#employee_data').DataTable();  
- });  
- </script>  
+	<script>
+		$(document).ready(function() {
+			$('#employee_data').DataTable();
+		});
+	</script>
 </body>
 
 </html>

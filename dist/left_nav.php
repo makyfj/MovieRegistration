@@ -15,22 +15,18 @@
 				<li class="pc-item">
 					<a href="index.html" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">home</i></span><span class="pc-mtext">Dashboard</span></a>
 				</li>
-				<li class="pc-item pc-caption">
-					<label>Elements</label>
-					<span>UI Components</span>
-				</li>
 				<li class="pc-item pc-hasmenu">
 					<a href="#!" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">business_center</i></span><span class="pc-mtext">Customers</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
 					<ul class="pc-submenu">
-						<li class="pc-item"><a class="pc-link" href="register.php">Register</a></li>
-						<li class="pc-item"><a class="pc-link" href="all_customers.php">Search</a></li>
+						<li class="pc-item"><a class="pc-link" href="register.php">Customer registration</a></li>
+						<li class="pc-item"><a class="pc-link" href="all_customers.php">Search customer</a></li>
 					</ul>
 				</li>
 				<li class="pc-item pc-hasmenu">
 					<a href="#!" class="pc-link "><span class="pc-micon"><i class="material-icons-two-tone">business_center</i></span><span class="pc-mtext">Movies</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
 					<ul class="pc-submenu">
-						<li class="pc-item"><a class="pc-link" href="register.php">Register a new movie</a></li>
-						<li class="pc-item"><a class="pc-link" href="all_customers.php">Search</a></li>
+						<li class="pc-item"><a class="pc-link" href="registerMovie.php">Movie registration</a></li>
+						<li class="pc-item"><a class="pc-link" href="all_movies.php">Search movie</a></li>
 					</ul>
 				</li>
 
