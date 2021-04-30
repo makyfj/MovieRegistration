@@ -119,7 +119,7 @@
 
 								<div class="col-md-3 text-center">
 									<div class="profile-img">
-										<img src="assets/images/user/profile.jpg" class="picture-src" id="uploadPreview" width="200px">
+										<img src="assets/images/user/movie.png" class="picture-src" id="uploadPreview" width="200px">
 
 										<div class="file btn btn-lg btn-primary" style="width: 80%;">
 											Change Photo
@@ -155,18 +155,18 @@
 										</div>
 
 										<div class="col-md-6 col-sm-12">
-											<label for="address1" class="form-label">Address 1</label>
+											<label for="address" class="form-label">Address</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="bi bi-house"></i></span>
-												<input type="text" class="form-control" id="address1" name="address1" aria-describedby="inputGroupPrepend" placeholder="Address" onkeyup="validateAddress1()">
-												<span class="input-group-text iconParent"><i class="fa fa-star" id="address1Icon"></i></span>
+												<input type="text" class="form-control" id="address" name="address" aria-describedby="inputGroupPrepend" placeholder="Address" onkeyup="validateAddress()">
+												<span class="input-group-text iconParent"><i class="fa fa-star" id="addressIcon"></i></span>
 											</div>
-											<div class="error" id="address1Err"></div>
+											<div class="error" id="addressErr"></div>
 										</div>
 
 
 										<div class="col-md-6 col-sm-12">
-											<label for="cityTown" class="form-label">City/Town</label>
+											<label for="cityTown" class="form-label">City</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="fa fa-city"></i></span>
 												<input type="text" class="form-control" id="cityTown" name="cityTown" aria-describedby="inputGroupPrepend" placeholder="City/Town" onkeyup="validateCity()">
@@ -344,6 +344,7 @@
 		</div>
 	</div>
 </body>
+
 <script>
 	(function documentReady() {
 
@@ -376,13 +377,9 @@
 				$('#show_hide_confirm_password i').addClass("fa-eye");
 			}
 		});
-
-
-
-
-
 	})();
 </script>
+
 <script>
 	// Defining a function to display error message
 	function printError(elemId, hintMsg) {
@@ -392,8 +389,7 @@
 	// Retrieving the values of form elements 
 	var firstName = document.contactForm.firstName;
 	var lastName = document.contactForm.lastName;
-	var address1 = document.contactForm.address1;
-	var address2 = document.contactForm.address2;
+	var address = document.contactForm.address;
 	var cityTown = document.contactForm.cityTown;
 	var state = document.contactForm.state;
 	var zip = document.contactForm.zip;
@@ -406,8 +402,8 @@
 	var pictureName = document.getElementById("pictureName");
 
 	// Defining error variables with a default value
-	var firstNameErr = lastNameErr = address1Err = address2Err = cityTownErr = stateErr = zipErr =
-		phoneNumberErr = mobilePhoneErr = emailAddressErr = passwordErr = confirmPasswordErr = over18Err = true;
+	var firstNameErr = lastNameErr = addressErr = cityTownErr = stateErr = zipErr =
+		phoneNumberErr = emailAddressErr = passwordErr = confirmPasswordErr = over18Err = true;
 
 	function valid(el, iconID) {
 		el.style.border = "1px solid green";
@@ -471,53 +467,28 @@
 
 
 	// Validate address 1
-	function validateAddress1() {
-		if (address1.value == "") {
-			address1Err = true;
-			inValid(address1, "address1Icon");
-			printError("address1Err", "Please enter address1");
-		} else if (address1.value != "") {
-			// Regular expression for basic address1 validation
+	function validateAddress() {
+		if (address.value == "") {
+			addressErr = true;
+			inValid(address, "addressIcon");
+			printError("addressErr", "Please enter address");
+		} else if (address.value != "") {
+			// Regular expression for basic address validation
 			var regex = /[a-zA-Z0-9\s]+$/;
 			var regex2 = /\bP(ost|ostal)?([ \.]*(O|0)(ffice)?)?([ \.]*Box)?\b/i;
-			if (regex.test(address1.value) === false) {
-				printError("address1Err", "Please enter a valid address1");
-				inValid(address1, "address1Icon");
-			} else if (regex2.test(address1.value)) {
-				printError("address1Err", "Address can not be P.O. Box");
-				inValid(address1, "address1Icon");
+			if (regex.test(address.value) === false) {
+				printError("addressErr", "Please enter a valid address");
+				inValid(address, "addressIcon");
+			} else if (regex2.test(address.value)) {
+				printError("addressErr", "Address can not be P.O. Box");
+				inValid(address, "addressIcon");
 			} else {
-				printError("address1Err", "");
-				address1Err = false;
-				valid(address1, "address1Icon");
+				printError("addressErr", "");
+				addressErr = false;
+				valid(address, "addressIcon");
 			}
 		}
 	}
-
-	// Validate Address 2
-	function validateAddress2() {
-		if (address2.value == "") {
-			printError("address2Err", "");
-			address2Err = false;
-			valid(address2, "address2Icon");
-		} else if (address2.value != "") {
-			// Regular expression for basic address2 validation
-			var regex = /[a-zA-Z0-9\s]+$/;
-			var regex2 = /\bP(ost|ostal)?([ \.]*(O|0)(ffice)?)?([ \.]*Box)?\b/i;
-			if (regex.test(address2.value) === false) {
-				printError("address2Err", "Please enter a valid address2");
-				inValid(address2, "address2Icon");
-			} else if (regex2.test(address2.value)) {
-				printError("address2Err", "Address can not be P.O. Box");
-				inValid(address2, "address2Icon");
-			} else {
-				printError("address2Err", "");
-				address2Err = false;
-				valid(address2, "address2Icon");
-			}
-		}
-	}
-
 
 	function validateCity() {
 		// Validate city/town
@@ -587,25 +558,6 @@
 				valid(phoneNumber, "phoneNumberIcon");
 			}
 		}
-	}
-
-	// Validate mobile number
-	function validateMobilePhone() {
-		if (mobilePhone.value == "") {
-			printError("mobilePhoneErr", "Please enter your mobile number");
-			inValid(mobilePhone, "mobilePhoneIcon");
-		} else {
-			var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-			if (regex.test(mobilePhone.value) === false) {
-				printError("mobilePhoneErr", "Please enter a valid 10 digit mobile number");
-				inValid(mobilePhone, "mobilePhoneIcon");
-			} else {
-				printError("mobilePhoneErr", "");
-				mobilePhoneErr = false;
-				valid(mobilePhone, "mobilePhoneIcon");
-			}
-		}
-
 	}
 
 	// Validate email address
@@ -686,13 +638,11 @@
 	function validateForm() {
 		validateFirstName();
 		validateLastName();
-		validateAddress1();
-		validateAddress2();
+		validateAddress();
 		validateCity();
 		validateState();
 		validateZip();
 		validatePhoneNumber();
-		validateMobilePhone();
 		validateEmailAddress();
 		validatePassword();
 		validateConfirmPassword();
@@ -708,7 +658,7 @@
 
 
 		// Prevent the form from being submitted if there are any errors
-		if ((firstNameErr || lastNameErr || address1Err || address2Err || cityTownErr || stateErr ||
+		if ((firstNameErr || lastNameErr || addressErr || cityTownErr || stateErr ||
 				zipErr || phoneNumberErr || mobilePhoneErr || emailAddressErr || passwordErr || confirmPasswordErr || over18Err) == true) {
 			return false;
 		} else {
@@ -718,6 +668,19 @@
 	};
 </script>
 
+<script type="text/javascript">
+	function uploadPicture() {
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("fileToUpload").files[0]);
+
+		oFReader.onload = function(oFREvent) {
+			document.getElementById("uploadPreview").src = oFREvent.target.result;
+
+			document.getElementById("pictureName").value = document.getElementById("fileToUpload").files[0].name;
+			document.getElementById("pictureParagraph").innerHTML = document.getElementById("fileToUpload").files[0].name;
+		};
+	};
+</script>
 
 
 
@@ -814,18 +777,5 @@
 		cursor: pointer;
 	}
 </style>
-<script type="text/javascript">
-	function uploadPicture() {
-		var oFReader = new FileReader();
-		oFReader.readAsDataURL(document.getElementById("fileToUpload").files[0]);
-
-		oFReader.onload = function(oFREvent) {
-			document.getElementById("uploadPreview").src = oFREvent.target.result;
-
-			document.getElementById("pictureName").value = document.getElementById("fileToUpload").files[0].name;
-			document.getElementById("pictureParagraph").innerHTML = document.getElementById("fileToUpload").files[0].name;
-		};
-	};
-</script>
 
 </html>

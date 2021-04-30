@@ -1,13 +1,12 @@
 <?php
 // Include config file
-require_once "admin/config.php";
+require_once "./admin/config.php";
 
 $target_dir = "./uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 $fileName = "";
-$ipAddress = $_SERVER['REMOTE_ADDR'];
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
@@ -28,7 +27,7 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 5000000) {
+if ($_FILES["fileToUpload"]["size"] > 50000000) {
 	echo "Sorry, your file is too large.";
 	$uploadOk = 0;
 }
@@ -48,41 +47,57 @@ if ($uploadOk == 0) {
 	// if everything is ok, try to upload file
 } else {
 	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		//echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-
 
 		$fileName  = $_FILES["fileToUpload"]["name"];
 	} else {
-		echo "Sorry, there was an error uploading your file.";
+		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+		$fileName  = $_FILES["fileToUpload"]["name"];
 	}
 }
+
+// Check email address
+if (!empty($_POST["emailAddress"])) {
+
+	$sql = "SELECT * FROM Customers WHERE emailAddress='" . $_POST["emailAddress"] . "'";
+
+
+	if ($result = mysqli_query($link, $sql)) {
+		// Return the number of rows in result set
+		$rowcount = mysqli_num_rows($result);
+
+		// Free result set
+		mysqli_free_result($result);
+	}
+
+
+	// Close connection
+	mysqli_close($link);
+}
+
 
 ?>
 
 
 <?php
 // Prepare an insert statement
-$sql = "INSERT INTO customers (`first_name`, `last_name`, `address1`,`address2`, `city_town`, `state`, `zip`, `phone_number`, `mobile_phone`, `email_address`, `password`, `over18`, `picture_name`, `ip_address`) VALUES (?, ?, ?, ?,?, ?, ?,?, ?, ?, ?,?, ?, ?)";
+$sql = "INSERT INTO Customers (`firstName`, `lastName`, `address`, `city`, `state`, `zip`, `phoneNumber`, `emailAddress`, `password`, `over18`, `pictureName`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 if ($stmt = mysqli_prepare($link, $sql)) {
 	// Bind variables to the prepared statement as parameters
-	mysqli_stmt_bind_param($stmt, "ssssssssssssss", $firstName, $lastName, $address1, $address2, $cityTown, $state, $zip, $phoneNumber, $mobilePhone, $emailAddress, $password, $over18, $pictureName, $ipAddress);
+	mysqli_stmt_bind_param($stmt, "sssssssssss", $firstName, $lastName, $address, $cityTown, $state, $zip, $phoneNumber, $emailAddress, $password, $over18, $pictureName);
 
 	// Set parameters
 	$firstName = $_REQUEST['firstName'];
 	$lastName = $_REQUEST['lastName'];
-	$address1 = $_REQUEST['address1'];
-	$address2 = $_REQUEST['address2'];
+	$address = $_REQUEST['address'];
 	$cityTown = $_POST['cityTown'];
 	$state = $_POST['state'];
 	$zip = $_POST['zip'];
 	$phoneNumber = $_POST['phoneNumber'];
-	$mobilePhone = $_POST['mobilePhone'];
 	$emailAddress = $_POST['emailAddress'];
 	$password = $_POST['password'];
 	$over18 = $_POST['over18'];
 	$pictureName = $_POST['pictureName'];
-
 
 	// Attempt to execute the prepared statement
 	if (mysqli_stmt_execute($stmt)) {
@@ -100,5 +115,7 @@ mysqli_stmt_close($stmt);
 // Close connection
 mysqli_close($link);
 
+
+header("Location: http://localhost/customersWebsite/dist/all_customers.php");
 
 ?>
