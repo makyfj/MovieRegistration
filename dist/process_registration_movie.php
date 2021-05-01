@@ -89,7 +89,6 @@ mysqli_stmt_close($stmt);
 // Close connection
 mysqli_close($link);
 
-
 header("Location: http://localhost/customersWebsite/dist/all_movies.php");
 
 ?>

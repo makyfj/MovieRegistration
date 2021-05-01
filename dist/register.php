@@ -40,7 +40,7 @@
 	<!-- [ Mobile header ] start -->
 	<div class="pc-mob-header pc-header">
 		<div class="pcm-logo">
-			<img src="assets/images/logo-white.png" alt="" class="logo logo-lg">
+			<img src="assets/images/moviesLogo.png" alt="" class="logo logo-lg">
 		</div>
 		<div class="pcm-toolbar">
 			<a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -96,7 +96,7 @@
 								<h5 class="m-b-10">Register New Customer</h5>
 							</div>
 							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 								<li class="breadcrumb-item">Register Customer</li>
 							</ul>
 						</div>

@@ -38,7 +38,7 @@ $result = mysqli_query($link, $query);
 
 
 
-	<title>All Customers</title>
+	<title>All Movies</title>
 
 </head>
 
@@ -53,7 +53,7 @@ $result = mysqli_query($link, $query);
 	<!-- [ Mobile header ] start -->
 	<div class="pc-mob-header pc-header">
 		<div class="pcm-logo">
-			<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+			<img src="assets/images/moviesLogo.png" alt="" class="logo logo-lg">
 		</div>
 		<div class="pcm-toolbar">
 			<a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -97,11 +97,11 @@ $result = mysqli_query($link, $query);
 					<div class="row align-items-center">
 						<div class="col-md-12">
 							<div class="page-header-title">
-								<h5 class="m-b-10">All Customers</h5>
+								<h5 class="m-b-10">Movies</h5>
 							</div>
 							<ul class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-								<li class="breadcrumb-item">Search Customers</li>
+								<li class="breadcrumb-item">Search Movies</li>
 							</ul>
 						</div>
 					</div>
@@ -115,7 +115,7 @@ $result = mysqli_query($link, $query);
 					<div class="card">
 						<div class="card-body">
 
-							<h3 align="center">Search Customer</h3>
+							<h3 align="center">Search Movie</h3>
 
 							<div class="table-responsive  container-fluid ">
 								<hr />

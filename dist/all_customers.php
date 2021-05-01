@@ -53,7 +53,7 @@ $result = mysqli_query($link, $query);
 	<!-- [ Mobile header ] start -->
 	<div class="pc-mob-header pc-header">
 		<div class="pcm-logo">
-			<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+			<img src="assets/images/moviesLogo.png" alt="" class="logo logo-lg">
 		</div>
 		<div class="pcm-toolbar">
 			<a href="#!" class="pc-head-link" id="mobile-collapse">

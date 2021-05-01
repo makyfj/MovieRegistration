@@ -80,6 +80,7 @@ $sql = "INSERT INTO Customers (`firstName`, `lastName`, `address`, `city`, `stat
 
 if ($stmt = mysqli_prepare($link, $sql)) {
 	// Bind variables to the prepared statement as parameters
+
 	mysqli_stmt_bind_param($stmt, "sssssssssss", $firstName, $lastName, $address, $cityTown, $state, $zip, $phoneNumber, $emailAddress, $password, $over18, $pictureName);
 
 	// Set parameters
@@ -94,6 +95,7 @@ if ($stmt = mysqli_prepare($link, $sql)) {
 	$password = $_POST['password'];
 	$over18 = $_POST['over18'];
 	$pictureName = $_POST['pictureName'];
+
 
 	// Attempt to execute the prepared statement
 	if (mysqli_stmt_execute($stmt)) {
