@@ -1,4 +1,4 @@
-# MovieReview
+# Movie registration
 
 - Final project for BCS 350 (Database Development)
 - PHP, MySQL and Bootstrap	
