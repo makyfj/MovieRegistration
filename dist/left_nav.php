@@ -1,7 +1,7 @@
 <nav class="pc-sidebar ">
 	<div class="navbar-wrapper">
 		<div class="m-header">
-			<a href="index.html" class="b-brand">
+			<a href="index.php" class="b-brand">
 				<img src="assets/images/moviesLogo.png" alt="" class="logo logo-lg text-center">
 				<img src="assets/images/moviesLogo.png" alt="" class="logo logo-sm text-center">
 			</a>
