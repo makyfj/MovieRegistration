@@ -107,6 +107,7 @@
 							<p>"This is my Final project using PHP, Bootstrap and MySQL."
 							</p>
 							<p>Check my github: <a href="https://github.com/makyfj">makyfj</a></p>
+							<p>Check this project on my github: <a href="https://github.com/makyfj/MovieRegistration">Movie Review</a></p>
 						</div>
 
 					</div>
